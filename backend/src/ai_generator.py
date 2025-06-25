@@ -3,7 +3,7 @@ import json
 import requests
 from typing import Dict, Any
 from dotenv import load_dotenv
-
+import uuid
 load_dotenv()
 
 HF_API_URL = "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1"
@@ -31,8 +31,10 @@ Make sure the options are plausible but with only one clearly correct answer.
 Only return valid JSON, no additional text or formatting.
 """
 
-    # Format the prompt for Mixtral using chat template
-    prompt = f"<s>[INST] <<SYS>>\n{system_prompt}\n<</SYS>>\n\nGenerate a {difficulty} difficulty coding challenge. [/INST]"
+      
+    rand_tag = str(uuid.uuid4())
+    prompt = f"<s>[INST] <<SYS>>\n{system_prompt}\n<</SYS>>\n\nGenerate a {difficulty} difficulty coding challenge. ID: {rand_tag} [/INST]"
+
 
     
     headers = {
