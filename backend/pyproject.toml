@@ -9,10 +9,9 @@ dependencies = [
     "dotenv>=0.9.9",
     "fastapi>=0.115.12",
     "openai>=1.79.0",
-    "psycopg2-binary>=2.9.10",
+    "pymongo>=4.15.1",
     "python-dotenv>=1.1.0",
     "requests>=2.32.4",
-    "sqlalchemy>=2.0.41",
     "svix>=1.65.0",
     "uvicorn>=0.34.2",
 ]
